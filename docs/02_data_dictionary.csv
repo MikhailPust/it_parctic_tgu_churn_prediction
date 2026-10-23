@@ -1,0 +1,56 @@
+﻿table;field;data_type;description;unit;available_at_rule;notes
+subscribers_clean;customer_id;String;Идентификатор абонента;—;постоянное;Ключ таблицы
+subscribers_clean;activation_date;Date;Дата подключения;дата;с даты подключения;YYYY-MM-DD, 65 значений восстановлены по contract_events
+subscribers_clean;activation_date_source;String;Откуда взята дата подключения;—;служебное;subscribers / contract_events / missing
+subscribers_clean;region;String;Регион обслуживания;—;постоянное;5 значений
+subscribers_clean;acquisition_channel;String;Канал подключения;—;постоянное;online / store / partner
+subscribers_clean;customer_segment;String;Сегмент;—;постоянное;individual / small_business
+contract_events_clean;event_id;String;Идентификатор события;—;—;Ключ таблицы
+contract_events_clean;customer_id;String;Идентификатор абонента;—;—;
+contract_events_clean;event_date;Date;Дата события;дата;действует с 00:00 даты события по Москве;В признаках на T — только события с датой < T, termination используется только для метки
+contract_events_clean;event_type;String;Тип события;—;—;activation / termination
+billing_clean;customer_id;String;Идентификатор абонента;—;—;Ключ (customer_id, billing_month)
+billing_clean;billing_month;Date;Расчётный месяц;месяц;—;YYYY-MM-DD, первый день месяца
+billing_clean;available_at;DateTime;Доступность строки биллинга;дата и время;= 00:00 1-го числа следующего месяца, Москва;ISO 8601 +03:00
+billing_clean;tariff;String;Тариф;—;available_at;Basic / Comfort / Premium (варианты написания приведены)
+billing_clean;monthly_fee_rub;Decimal;Полная цена тарифа;руб.;available_at;
+billing_clean;charged_rub;Decimal;Начислено;руб.;available_at;
+billing_clean;paid_rub;Decimal;Оплачено;руб.;available_at;Десятичная запятая приведена к точке
+billing_clean;opening_debt_rub;Decimal;Долг на начало месяца;руб.;available_at;
+billing_clean;closing_debt_rub;Decimal;Долг на конец месяца;руб.;available_at;40 значений восстановлены по равенству opening + charged − paid
+billing_clean;traffic_gb;Decimal;Трафик;ГБ;available_at;Пропуск = неизвестно (не 0)
+billing_clean;voice_minutes;Integer;Минуты связи;мин.;available_at;Отрицательные значения заменены пропуском
+billing_clean;active_days;Integer;Дни действия договора в месяце;дни;available_at;
+billing_clean;payment_delay_days;Integer;Задержка оплаты;дни;available_at;
+billing_clean;tariff_changes_count;Integer;Смены тарифа за месяц;шт.;available_at;0 или 1
+billing_clean;closing_debt_restored;Flag 0/1;Конечный долг восстановлен расчётом;—;служебное;
+billing_clean;traffic_gb_missing;Flag 0/1;Трафик неизвестен;—;available_at;Можно использовать как индикатор пропуска
+billing_clean;voice_minutes_invalid;Flag 0/1;Исходное значение минут было некорректным;—;служебное;
+support_clean;ticket_id;String;Идентификатор обращения;—;—;Ключ таблицы
+support_clean;customer_id;String;Идентификатор абонента;—;—;Пробелы удалены, только абоненты из справочника
+support_clean;source_system;String;Система-источник;—;—;legacy (сен–окт 2025) / current (ноя 2025 – авг 2026)
+support_clean;created_at;DateTime;Создание обращения;дата и время;—;Москва ISO 8601 +03:00
+support_clean;available_at;DateTime;Доступность записи о создании;дата и время;сам момент;Обращение известно на T только при available_at ≤ T
+support_clean;topic;String;Тема;—;available_at;network / billing / tariff / services / unknown
+support_clean;channel;String;Канал;—;available_at;phone / chat / office
+support_clean;resolved_at;DateTime;Закрытие;дата и время;resolution_available_at;Пусто — закрытие не подтверждено или некорректно
+support_clean;resolution_available_at;DateTime;Доступность закрытия и оценки;дата и время;сам момент;
+support_clean;satisfaction_score;Integer;Оценка 1–5;балл;resolution_available_at;Пусто — оценки нет или она некорректна
+support_clean;created_tz_assumed;Flag 0/1;Время создания было без зоны, принята Москва;—;служебное;
+support_clean;resolution_invalid;Flag 0/1;Исходное закрытие раньше создания, закрытие и оценка обнулены;—;служебное;
+support_clean;satisfaction_score_invalid;Flag 0/1;Исходная оценка вне 1–5;—;служебное;
+quarantine_support;reason;String;Причина исключения;—;—;missing_customer_id / unknown_customer_id / available_before_created
+quarantine_support;linked_customer;Flag 0/1;Можно ли связать с абонентом справочника;—;—;Связанные записи учтены в customer_month.dq_support_quarantined_count
+customer_month;(поля billing_clean);—;Все поля и флаги биллинга;—;available_at строки;Одна строка на customer_id × billing_month, число строк = billing_clean
+customer_month;region, acquisition_channel, customer_segment, activation_date, activation_date_source;—;Постоянные характеристики абонента;—;постоянные;Из subscribers_clean, дата расторжения НЕ включается
+customer_month;support_count;Integer;Обращения, созданные в billing_month (Москва) и доступные не позднее available_at строки;шт.;available_at строки;0 = нет доступных корректно связанных записей, а не доказательство отсутствия обращений
+customer_month;support_network_count;Integer;То же, тема network;шт.;available_at строки;
+customer_month;support_billing_count;Integer;То же, тема billing;шт.;available_at строки;
+customer_month;support_unknown_topic_count;Integer;То же, тема unknown;шт.;available_at строки;
+customer_month;support_resolved_count;Integer;Из учтённых обращений — закрытия с resolution_available_at ≤ available_at строки;шт.;available_at строки;Дополнительная задача
+customer_month;support_rating_count;Integer;Число доступных оценок среди этих закрытий;шт.;available_at строки;Дополнительная задача
+customer_month;support_rating_mean;Decimal;Средняя доступная оценка;балл;available_at строки;Пусто при отсутствии оценок
+customer_month;dq_support_tz_assumed_count;Integer;Учтённые обращения с принятым московским временем;шт.;служебное;Флаг качества, не признак модели
+customer_month;dq_support_resolution_invalid_count;Integer;Учтённые обращения с некорректным закрытием;шт.;служебное;Флаг качества
+customer_month;dq_support_score_invalid_count;Integer;Учтённые обращения с некорректной оценкой;шт.;служебное;Флаг качества
+customer_month;dq_support_quarantined_count;Integer;Обращения из карантина, связанные с абонентом и месяцем создания;шт.;служебное;Флаг качества, время доступности этих записей недостоверно, поэтому как признак не использовать

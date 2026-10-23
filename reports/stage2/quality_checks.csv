@@ -1,0 +1,77 @@
+﻿source;check;field;rows_with_problem_before;problem_cells_before;duplicate_copies_before;total_rows_before;rows_with_problem_after;problem_cells_after;duplicate_copies_after;total_rows_after
+subscribers;Всего строк;*;;;;2600.0;;;;2600.0
+subscribers;Полные повторные строки;*;;;0.0;2600.0;;;0.0;2600.0
+subscribers;Повтор ключа customer_id;customer_id;0.0;;;2600.0;0.0;;;2600.0
+subscribers;Пропуск;activation_date;;65.0;;2600.0;;0.0;;2600.0
+subscribers;Дата не в формате YYYY-MM-DD;activation_date;;0.0;;2600.0;;0.0;;2600.0
+subscribers;Расхождение с событием activation;activation_date;;0.0;;2600.0;;0.0;;2600.0
+subscribers;Значение вне справочника;region;;0.0;;2600.0;;0.0;;2600.0
+subscribers;Значение вне справочника;acquisition_channel;;0.0;;2600.0;;0.0;;2600.0
+subscribers;Значение вне справочника;customer_segment;;0.0;;2600.0;;0.0;;2600.0
+billing_monthly;Всего строк;*;;;;24248.0;;;;24098.0
+billing_monthly;Полные повторные строки;*;;;150.0;24248.0;;;0.0;24098.0
+billing_monthly;Конфликт значений ключа (customer_id, billing_month);customer_id, billing_month;0.0;;;24248.0;0.0;;;24098.0
+billing_monthly;Месяц не в формате YYYY-MM-DD;billing_month;;400.0;;24248.0;;0.0;;24098.0
+billing_monthly;available_at ≠ 1-е число следующего месяца;available_at;0.0;;;24248.0;0.0;;;24098.0
+billing_monthly;Тариф вне Basic/Comfort/Premium;tariff;;200.0;;24248.0;;0.0;;24098.0
+billing_monthly;Десятичная запятая;monthly_fee_rub;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Пропуск;monthly_fee_rub;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Десятичная запятая;charged_rub;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Пропуск;charged_rub;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Десятичная запятая;paid_rub;;120.0;;24248.0;;0.0;;24098.0
+billing_monthly;Пропуск;paid_rub;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Десятичная запятая;opening_debt_rub;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Пропуск;opening_debt_rub;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Десятичная запятая;closing_debt_rub;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Пропуск;closing_debt_rub;;40.0;;24248.0;;0.0;;24098.0
+billing_monthly;Десятичная запятая;traffic_gb;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Пропуск;traffic_gb;;240.0;;24248.0;;240.0;;24098.0
+billing_monthly;Десятичная запятая;voice_minutes;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Пропуск;voice_minutes;;0.0;;24248.0;;80.0;;24098.0
+billing_monthly;Десятичная запятая;active_days;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Пропуск;active_days;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Десятичная запятая;payment_delay_days;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Пропуск;payment_delay_days;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Десятичная запятая;tariff_changes_count;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Пропуск;tariff_changes_count;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Отрицательное значение;voice_minutes;;80.0;;24248.0;;0.0;;24098.0
+billing_monthly;Отрицательные суммы или трафик;monthly_fee_rub, charged_rub, paid_rub, opening_debt_rub, closing_debt_rub, traffic_gb;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;active_days вне [1, дней в месяце];active_days;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;payment_delay_days вне [0, дней в месяце];payment_delay_days;;0.0;;24248.0;;0.0;;24098.0
+billing_monthly;Цена не соответствует тарифу;monthly_fee_rub;0.0;;;24248.0;0.0;;;24098.0
+billing_monthly;Нарушено opening + charged − paid = closing;closing_debt_rub;0.0;;;24248.0;0.0;;;24098.0
+billing_monthly;opening_debt ≠ closing_debt предыдущего месяца;opening_debt_rub;0.0;;;24248.0;0.0;;;24098.0
+billing_monthly;Ненулевой долг в первой строке абонента;opening_debt_rub;0.0;;;24248.0;0.0;;;24098.0
+billing_monthly;Ссылка на неизвестного абонента;customer_id;0.0;;;24248.0;0.0;;;24098.0
+billing_monthly;Месяц вне периода договора;billing_month;0.0;;;24248.0;0.0;;;24098.0
+contract_events;Всего строк;*;;;;3299.0;;;;3299.0
+contract_events;Полные повторные строки;*;;;0.0;3299.0;;;0.0;3299.0
+contract_events;Повтор ключа event_id;event_id;0.0;;;3299.0;0.0;;;3299.0
+contract_events;Дата не в формате YYYY-MM-DD;event_date;;0.0;;3299.0;;0.0;;3299.0
+contract_events;Неизвестный тип события;event_type;;0.0;;3299.0;;0.0;;3299.0
+contract_events;Ссылка на неизвестного абонента;customer_id;0.0;;;3299.0;0.0;;;3299.0
+contract_events;Абоненты без ровно одного activation;event_type;0.0;;;;0.0;;;
+contract_events;Абоненты с >1 termination;event_type;0.0;;;;0.0;;;
+contract_events;termination не позже activation;event_date;0.0;;;;0.0;;;
+support;Всего строк;*;;;;10988.0;;;;10818.0
+support_current;Всего строк;*;;;;9373.0;;;;9233.0
+support_current;Полные повторные строки;*;;;100.0;9373.0;;;0.0;9233.0
+support_legacy;Всего строк;*;;;;1615.0;;;;1585.0
+support_legacy;Полные повторные строки;*;;;30.0;1615.0;;;0.0;1585.0
+support;Конфликт значений ticket_id;ticket_id;0.0;;;10988.0;0.0;;;10818.0
+support;Пустой customer_id;customer_id;;8.0;;10988.0;;0.0;;10818.0
+support;Пробелы вокруг customer_id;customer_id;;30.0;;10988.0;;0.0;;10818.0
+support;Ссылка на неизвестного абонента;customer_id;12.0;;;10988.0;0.0;;;10818.0
+support;Время без часового пояса;created_at;;40.0;;10988.0;;;;
+support;Время не в формате Москвы ISO 8601;created_at, available_at, ...;9273.0;;;10988.0;0.0;;;10818.0
+support;Тема вне кодов network/billing/tariff/services/unknown;topic;;1705.0;;10988.0;;0.0;;10818.0
+support;Пустая тема;topic;;120.0;;10988.0;;0.0;;10818.0
+support;Канал вне кодов phone/chat/office;channel;;1585.0;;10988.0;;0.0;;10818.0
+support;Создание вне [01.09.2025, 01.09.2026);created_at;0.0;;;10988.0;0.0;;;10818.0
+support;available_at раньше created_at;available_at;20.0;;;10988.0;0.0;;;10818.0
+support;resolved_at раньше created_at;resolved_at;35.0;;;10988.0;0.0;;;10818.0
+support;resolution_available_at раньше resolved_at или available_at;resolution_available_at;0.0;;;10988.0;0.0;;;10818.0
+support;Закрытие без момента доступности (или наоборот);resolved_at;0.0;;;10988.0;0.0;;;10818.0
+support;Оценка вне 1–5;satisfaction_score;;25.0;;10988.0;;0.0;;10818.0
+support;Оценка без подтверждённого закрытия;satisfaction_score;;0.0;;10988.0;;0.0;;10818.0
+support;Создание вне периода договора;created_at;0.0;;;10988.0;0.0;;;10818.0

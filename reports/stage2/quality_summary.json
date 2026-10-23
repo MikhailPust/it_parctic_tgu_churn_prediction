@@ -1,0 +1,69 @@
+{
+  "run": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "support_current_source": "sqlite",
+    "raw_checksums": "verified"
+  },
+  "sqlite_diagnostics": {
+    "source_rows": 9373,
+    "duplicated_ticket_ids": 100,
+    "full_duplicate_copies": 100,
+    "empty_customer_id": 8,
+    "created_without_timezone": 40
+  },
+  "rows_before": {
+    "subscribers": 2600,
+    "billing": 24248,
+    "events": 3299,
+    "support_legacy": 1615,
+    "support_current": 9373
+  },
+  "rows_after": {
+    "subscribers_clean": 2600,
+    "billing_clean": 24098,
+    "contract_events_clean": 3299,
+    "support_clean": 10818,
+    "customer_month": 24098,
+    "quarantine_support": 40
+  },
+  "unique": {
+    "subscribers": 2600,
+    "billing_customers": 2550,
+    "support_tickets": 10818
+  },
+  "quarantine_by_reason": {
+    "available_before_created": 20,
+    "unknown_customer_id": 12,
+    "missing_customer_id": 8
+  },
+  "quarantine_linked_to_customer": 20,
+  "customer_month": {
+    "rows": 24098,
+    "billing_rows": 24098,
+    "key_unique": true,
+    "sum_charged_rub": 17397696.86,
+    "sum_paid_rub": 16978266.61,
+    "sum_closing_debt_rub": 3718676.9,
+    "rows_with_zero_support": 16046,
+    "share_rows_with_zero_support": 0.6659,
+    "customers_without_any_available_support": 268,
+    "support_tickets_counted": 10568,
+    "tickets_excluded_late_availability": 250,
+    "tickets_without_billing_row": 0,
+    "rows_with_quarantined_linked_ticket": 20,
+    "traffic_missing_cells": 240,
+    "voice_missing_cells": 80
+  },
+  "subscribers_activation_source": {
+    "subscribers": 2535,
+    "contract_events": 65
+  },
+  "subscribers_without_billing": 50,
+  "events": {
+    "activation": 2600,
+    "termination": 699
+  }
+}
