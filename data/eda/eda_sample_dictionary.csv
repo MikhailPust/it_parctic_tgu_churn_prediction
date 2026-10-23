@@ -1,0 +1,17 @@
+﻿field;description;unit;availability
+customer_id;Идентификатор абонента;—;ключ
+snapshot_at;Дата расчёта T, 00:00 Москвы;дата;ключ
+split;Часть разбиения по времени;—;eda (в этой таблице только EDA-даты)
+source_billing_month;Месяц биллинга, из которого взяты показатели;месяц;последний доступный к T (T−1)
+billing_available_at;Момент доступности этого месяца;дата и время;≤ snapshot_at
+billing_months_available;Число месяцев биллинга, доступных к T;мес.;длина истории
+tariff ... tariff_changes_count;Показатели биллинга за source_billing_month;см. словарь этапа 2;на T
+traffic_gb_missing, voice_minutes_invalid;Флаги пропуска/некорректности;0/1;на T
+support_*_count;Доступные обращения, созданные в source_billing_month;шт.;available_at ≤ T
+region, acquisition_channel, customer_segment, activation_date;Постоянные характеристики;—;постоянные
+tenure_days, tenure_group;Стаж на T и группа (<90 / ≥90 дней);дни;на T
+debt_group;Группа долга по closing_debt_rub: >0, =0, unknown;—;на T
+support_group;Группа support_count: 0, 1, 2+, unknown;—;на T
+target_end_exclusive;Конец горизонта метки (исключён);дата;метка, не признак
+label_observed;Конец горизонта ≤ 01.10.2026;0/1;метка, не признак
+churn_target;Расторжение в [snapshot_at, target_end_exclusive);0/1;метка, не признак

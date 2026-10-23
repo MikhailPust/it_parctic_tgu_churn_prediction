@@ -1,0 +1,27 @@
+{
+  "eda_dates": [
+    "2025-12-01",
+    "2026-01-01",
+    "2026-02-01",
+    "2026-03-01",
+    "2026-04-01",
+    "2026-05-01",
+    "2026-06-01",
+    "2026-07-01"
+  ],
+  "validation_dates": [
+    "2026-08-01"
+  ],
+  "test_dates": [
+    "2026-09-01"
+  ],
+  "horizon": "calendar_month",
+  "active_base_rule": "activation_date < T and (termination_date is null or termination_date >= T)",
+  "events_observed_to": "2026-10-01",
+  "rows": 15696,
+  "customers": 2319,
+  "churn": 440,
+  "pandas": "3.1.0",
+  "matplotlib": "3.11.2",
+  "eda_sample_sha256": "003a23d0e61f8e2985339d9dcafa424095416ecdfbb4d726d5d89de3ea88a94f"
+}

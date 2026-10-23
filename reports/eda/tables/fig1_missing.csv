@@ -1,0 +1,18 @@
+﻿field;n_rows;n_missing;missing_share;reason
+tariff;15696;0;0.0;
+monthly_fee_rub;15696;0;0.0;
+charged_rub;15696;0;0.0;
+paid_rub;15696;0;0.0;
+opening_debt_rub;15696;0;0.0;
+closing_debt_rub;15696;0;0.0;
+traffic_gb;15696;147;0.00937;пропуск в биллинге (неизвестный объём)
+voice_minutes;15696;50;0.00319;отрицательное значение в источнике заменено пропуском
+active_days;15696;0;0.0;
+payment_delay_days;15696;0;0.0;
+tariff_changes_count;15696;0;0.0;
+support_count;15696;0;0.0;
+support_network_count;15696;0;0.0;
+support_billing_count;15696;0;0.0;
+support_unknown_topic_count;15696;0;0.0;
+region;15696;0;0.0;
+tenure_days;15696;0;0.0;

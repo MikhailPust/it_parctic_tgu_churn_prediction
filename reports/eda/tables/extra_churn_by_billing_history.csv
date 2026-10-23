@@ -1,0 +1,4 @@
+﻿history;n_observations;n_customers;n_churn;churn_rate;small_group
+1–2 мес.;784;445;28;0.03571;False
+3–5 мес.;6290;2197;167;0.02655;False
+6–12 мес.;8622;1904;245;0.02842;False

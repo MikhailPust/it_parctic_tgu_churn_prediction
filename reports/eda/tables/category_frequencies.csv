@@ -1,0 +1,21 @@
+﻿field;value;n
+tariff;Comfort;6286
+tariff;Basic;6239
+tariff;Premium;3171
+region;Москва;3197
+region;Новосибирская область;3186
+region;Томская область;3144
+region;Московская область;3142
+region;Красноярский край;3027
+acquisition_channel;online;7401
+acquisition_channel;store;5779
+acquisition_channel;partner;2516
+customer_segment;individual;14471
+customer_segment;small_business;1225
+tenure_group;≥90 дней;14599
+tenure_group;<90 дней;1097
+debt_group;=0;12035
+debt_group;>0;3661
+support_group;0;10351
+support_group;1;4018
+support_group;2+;1327

@@ -1,0 +1,7 @@
+﻿case;expected_in_base;got_in_base;expected_label;got_label;ok
+A_act_on_T;False;False;;;True
+B_act_before_T;True;True;0.0;0.0;True
+C_term_on_T;True;True;1.0;1.0;True
+D_term_on_end;True;True;0.0;0.0;True
+E_term_before_end;True;True;1.0;1.0;True
+F_term_before_T;False;False;;;True

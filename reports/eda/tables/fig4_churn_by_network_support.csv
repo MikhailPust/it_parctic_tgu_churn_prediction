@@ -1,0 +1,4 @@
+﻿network_group;n_observations;n_customers;n_churn;churn_rate;small_group
+0;13163;2306;370;0.02811;False
+1;2254;1413;64;0.02839;False
+2+;279;260;6;0.02151;False
