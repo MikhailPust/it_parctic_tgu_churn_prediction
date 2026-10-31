@@ -1,0 +1,25 @@
+﻿feature;group;n_observations;n_customers;n_churn;churn_rate;small_group
+digital_status_prev;export_gap;306;279;6;0.01961;False
+digital_status_prev;not_enabled;2006;585;48;0.02393;False
+digital_status_prev;not_published_at_T;7897;2221;220;0.02786;False
+digital_status_prev;observed;5487;1612;166;0.03025;False
+payment_failure_rate_3m;"(0; 0,34]";3562;1303;105;0.02948;False
+payment_failure_rate_3m;0;4425;1408;113;0.02554;False
+payment_failure_rate_3m;> 0,34;2583;1053;87;0.03368;False
+payment_failure_rate_3m;неизвестно;5126;1247;135;0.02634;False
+app_sessions_mean_3m;0–3;1173;696;36;0.03069;False
+app_sessions_mean_3m;3–8;5712;1540;166;0.02906;False
+app_sessions_mean_3m;> 8;4466;1393;120;0.02687;False
+app_sessions_mean_3m;неизвестно;4345;781;118;0.02716;False
+debt_months_3m;0;7784;1977;96;0.01233;False
+debt_months_3m;1;5670;1854;202;0.03563;False
+debt_months_3m;2;1945;918;108;0.05553;False
+debt_months_3m;3;297;214;34;0.11448;False
+unpaid_months_3m;0;11423;2176;200;0.01751;False
+unpaid_months_3m;1;3449;1199;162;0.04697;False
+unpaid_months_3m;2;750;413;67;0.08933;False
+unpaid_months_3m;3;74;63;11;0.14865;False
+traffic_change_1m_gb;±10 ГБ;8653;2084;252;0.02912;False
+traffic_change_1m_gb;неизвестно;687;548;18;0.0262;False
+traffic_change_1m_gb;рост > 10 ГБ;3250;1622;71;0.02185;False
+traffic_change_1m_gb;снижение > 10 ГБ;3106;1542;99;0.03187;False

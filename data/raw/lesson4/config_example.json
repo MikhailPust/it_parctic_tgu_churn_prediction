@@ -1,0 +1,15 @@
+{
+  "horizon": "calendar_month",
+  "active_mode": "before_events",
+  "window_months": 3,
+  "train_start": "2025-12-01",
+  "train_end_inclusive": "2026-07-01",
+  "validation_dates": [
+    "2026-08-01"
+  ],
+  "test_dates": [
+    "2026-09-01"
+  ],
+  "observation_end_exclusive": "2026-10-01",
+  "campaign_fraction": 0.1
+}

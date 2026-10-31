@@ -1,0 +1,15 @@
+﻿check;value;detail
+Строк;24098;
+Повтор ключа (customer_id, usage_month);0;
+Ссылка на неизвестного абонента;0;
+Пары совпадают с billing_clean;1;1 = да
+Статус вне observed/not_enabled/export_gap;0;
+observed: пустые показатели;0;
+not_enabled/export_gap: заполненные показатели;0;
+Отрицательные показатели;0;
+payment_failures > payment_attempts;0;
+available_at раньше конца месяца;0;
+Отчёт опубликован позже 00:00 1-го числа;12084;задержка, ч: 0: 12014, 6: 4109, 24: 3872, 36: 4103
+Статус observed;16991;
+Статус not_enabled;6120;
+Статус export_gap;987;

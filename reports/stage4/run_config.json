@@ -1,0 +1,98 @@
+{
+  "horizon": "calendar_month",
+  "active_mode": "before_events",
+  "active_base_rule": "activation_date < T and (termination_date is null or termination_date >= T)",
+  "window_months": 3,
+  "train_dates": [
+    "2025-12-01",
+    "2026-01-01",
+    "2026-02-01",
+    "2026-03-01",
+    "2026-04-01",
+    "2026-05-01",
+    "2026-06-01",
+    "2026-07-01"
+  ],
+  "validation_dates": [
+    "2026-08-01"
+  ],
+  "test_dates": [
+    "2026-09-01"
+  ],
+  "observation_end_exclusive": "2026-10-01",
+  "campaign_fraction": 0.1,
+  "split_sizes": {
+    "test": {
+      "rows": 1916,
+      "customers": 1916
+    },
+    "train": {
+      "rows": 15696,
+      "customers": 2319
+    },
+    "validation": {
+      "rows": 1929,
+      "customers": 1929
+    }
+  },
+  "x_input_columns": {
+    "numeric": [
+      "tenure_days",
+      "debt_prev_rub",
+      "debt_change_1m_rub",
+      "debt_months_3m",
+      "payment_delay_prev_days",
+      "unpaid_months_3m",
+      "paid_to_charged_3m",
+      "traffic_prev_gb",
+      "traffic_mean_3m_gb",
+      "traffic_change_1m_gb",
+      "traffic_per_active_day_3m_gb",
+      "voice_mean_3m_min",
+      "support_count_3m",
+      "support_network_3m",
+      "support_billing_3m",
+      "app_sessions_prev",
+      "payment_attempts_prev",
+      "payment_failure_rate_prev",
+      "app_sessions_per_day_prev",
+      "app_sessions_mean_3m",
+      "payment_failure_rate_3m",
+      "app_sessions_last_observed",
+      "digital_last_observed_age_m",
+      "billing_history_months",
+      "billing_months_known_3m",
+      "traffic_known_months_3m",
+      "voice_known_months_3m",
+      "digital_observed_months_3m"
+    ],
+    "categorical": [
+      "region",
+      "customer_segment",
+      "acquisition_channel",
+      "tariff_prev",
+      "digital_status_prev"
+    ]
+  },
+  "x_output_columns": 59,
+  "matrix_shapes": {
+    "train": [
+      15696,
+      59
+    ],
+    "validation": [
+      1929,
+      59
+    ],
+    "test": [
+      1916,
+      59
+    ]
+  },
+  "all_finite": true,
+  "versions": {
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1"
+  }
+}

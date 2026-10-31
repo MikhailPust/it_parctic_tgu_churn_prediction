@@ -9,6 +9,7 @@ RAW = ROOT / "data" / "raw"
 LESSON1 = RAW / "lesson1"
 LESSON2 = RAW / "lesson2"
 LESSON3 = RAW / "lesson3"
+LESSON4 = RAW / "lesson4"
 
 INTERIM = ROOT / "data" / "interim"
 PREPARED = ROOT / "data" / "prepared"
@@ -32,6 +33,7 @@ SOURCES = {
     "support_schema": LESSON2 / "schema_support.csv",
     "network": LESSON3 / "data" / "network_quality_monthly.csv",
     "business_context": LESSON3 / "data" / "business_context.csv",
+    "digital": LESSON4 / "data" / "digital_usage_monthly.csv",
 }
 
 # Все моменты времени приводятся к Москве (UTC+3, без перехода на летнее время).
@@ -68,3 +70,10 @@ CAMPAIGN_SHARE = 0.10
 
 TENURE_THRESHOLD_DAYS = 90
 SMALL_GROUP = 30
+
+# Этап 4: признаки
+REPORTS_STAGE4 = ROOT / "reports" / "stage4"
+FEATURES_DATA = ROOT / "data" / "features"
+TRAIN_DATES = EDA_DATES  # 01.12.2025–01.07.2026: обучение и выбор признаков
+ALL_DATES = TRAIN_DATES.append(VALIDATION_DATES).append(TEST_DATES)
+WINDOW_MONTHS = 3  # окно истории — три предыдущих календарных месяца [T − 3 мес., T)
