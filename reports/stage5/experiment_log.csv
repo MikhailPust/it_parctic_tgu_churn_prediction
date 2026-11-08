@@ -1,0 +1,13 @@
+﻿id;family;params;seed;feature_version;part;recall_at_k;precision_at_k;average_precision;pooled_recall_at_k;hits;n_churn;k_total;fit_seconds;status;warnings
+baseline_debt;rule;"{""sort"": ""debt_prev_rub desc, unknown last, customer_id asc""}";42;stage-4;train;0.396267;0.111802;0.088241;0.397727;175;440;1566;;ok;
+baseline_debt;rule;"{""sort"": ""debt_prev_rub desc, unknown last, customer_id asc""}";42;stage-4;validation;0.222222;0.072917;0.058262;0.222222;14;63;192;;ok;
+exp01_lr_c0.1;logistic_regression;"{""C"": 0.1}";42;stage-4;train;0.406407;0.114347;0.120672;0.406818;179;440;1566;0.091162;ok;
+exp01_lr_c0.1;logistic_regression;"{""C"": 0.1}";42;stage-4;validation;0.285714;0.09375;0.06353;0.285714;18;63;192;0.091162;ok;
+exp02_lr_c1;logistic_regression;"{""C"": 1.0}";42;stage-4;train;0.424154;0.119455;0.122273;0.425;187;440;1566;0.07271;ok;
+exp02_lr_c1;logistic_regression;"{""C"": 1.0}";42;stage-4;validation;0.285714;0.09375;0.063491;0.285714;18;63;192;0.07271;ok;
+exp03_lr_c0.1_balanced;logistic_regression;"{""C"": 0.1, ""class_weight"": ""balanced""}";42;stage-4;train;0.40456;0.113693;0.107873;0.404545;178;440;1566;0.127091;ok;
+exp03_lr_c0.1_balanced;logistic_regression;"{""C"": 0.1, ""class_weight"": ""balanced""}";42;stage-4;validation;0.301587;0.098958;0.063307;0.301587;19;63;192;0.127091;ok;
+exp04_hgb_leaf7;hist_gradient_boosting;"{""max_leaf_nodes"": 7, ""max_iter"": 100, ""learning_rate"": 0.07, ""min_samples_leaf"": 50, ""l2_regularization"": 1.0}";42;stage-4;train;0.549872;0.155275;0.300253;0.552273;243;440;1566;0.265371;ok;
+exp04_hgb_leaf7;hist_gradient_boosting;"{""max_leaf_nodes"": 7, ""max_iter"": 100, ""learning_rate"": 0.07, ""min_samples_leaf"": 50, ""l2_regularization"": 1.0}";42;stage-4;validation;0.269841;0.088542;0.077879;0.269841;17;63;192;0.265371;ok;
+exp05_hgb_leaf15;hist_gradient_boosting;"{""max_leaf_nodes"": 15, ""max_iter"": 100, ""learning_rate"": 0.07, ""min_samples_leaf"": 50, ""l2_regularization"": 1.0}";42;stage-4;train;0.70389;0.198715;0.545965;0.706818;311;440;1566;0.355832;ok;
+exp05_hgb_leaf15;hist_gradient_boosting;"{""max_leaf_nodes"": 15, ""max_iter"": 100, ""learning_rate"": 0.07, ""min_samples_leaf"": 50, ""l2_regularization"": 1.0}";42;stage-4;validation;0.285714;0.09375;0.061999;0.285714;18;63;192;0.355832;ok;

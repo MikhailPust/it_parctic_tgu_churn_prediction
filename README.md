@@ -12,6 +12,7 @@ IT-Практикум «Искусственный интеллект и бол�
 | 2. Подготовка данных | `stage-2` | [Отчёт о качестве](docs/02_quality_report.md), [словарь данных](docs/02_data_dictionary.csv) | `data/prepared/*.csv`, карантин, [журнал решений](reports/stage2/decision_log.csv), [проверки до/после](reports/stage2/quality_checks.csv), [сводка](reports/stage2/quality_summary.json) |
 | 3. Разведочный анализ | `stage-3` | [Отчёт EDA](docs/03_eda_report.md), [журнал гипотез](reports/eda/analysis_plan.csv) | `data/eda/eda_sample.csv`, 6 рисунков `reports/eda/figures`, расчётные таблицы `reports/eda/tables`, [проверки](reports/eda/checks.csv) |
 | 4. Признаки и выбор метода | `stage-4` | [План моделирования](docs/04_modeling_plan.md), [паспорт признаков](docs/04_feature_catalog.csv) | `data/features/` (features, labels, split, feature_audit), [baseline на train](reports/stage4/baseline_train_by_date.csv), [столбцы X](reports/stage4/x_columns.csv), [проверки](reports/stage4/checks.csv), [конфигурация](reports/stage4/run_config.json) |
+| 5. Обучение модели | `stage-5` | [Отчёт об обучении](docs/05_training_report.md), [журнал экспериментов](docs/05_experiment_log.md) | [конфигурация опытов](config/stage5.json), `models/stage5_candidate.joblib`, [метрики по T](reports/stage5/metrics_by_T.csv), [validation-прогнозы](reports/stage5/validation_predictions.csv), [проверка загрузки](reports/stage5/reload_check.json) |
 
 ## Запуск
 
@@ -23,7 +24,9 @@ python -m venv .venv
 .venv\Scripts\python -m src.prepare      # этап 2: data/raw -> data/prepared, reports/stage2
 .venv\Scripts\python -m src.eda          # этап 3: data/prepared -> data/eda, reports/eda
 .venv\Scripts\python -m src.stage4       # этап 4: признаки, baseline, преобразование -> data/features, reports/stage4
-.venv\Scripts\python -m pytest           # 23 теста
+.venv\Scripts\python -m src.stage5       # этап 5: обучение, журнал, выбор и сохранение кандидата -> models, reports/stage5
+.venv\Scripts\python -m src.check_model  # этап 5: загрузка кандидата и проверка validation без fit
+.venv\Scripts\python -m pytest           # 29 тестов
 ```
 
 В Linux/macOS вместо `.venv\Scripts\` используйте `.venv/bin/`. Резервный путь чтения текущей поддержки из CSV-копии вместо SQLite: `python -m src.prepare --support-source csv`. Он даёт те же результаты.
@@ -33,7 +36,7 @@ python -m venv .venv
 ## Структура
 
 ```
-data/raw/lesson1..4     исходники курса без изменений (+ checksums.sha256)
+data/raw/lesson1..5     исходники курса без изменений (+ checksums.sha256)
 data/prepared/          очищенные таблицы этапа 2 и карантин поддержки
 data/eda/               eda_sample.csv, словарь, таблица доступности сетевых отчётов
 data/features/          этап 4: features, labels, split, feature_audit
@@ -50,7 +53,12 @@ src/features.py         признаки на T: окна, доступност�
 src/baseline.py         правило «сортировка по долгу» и Recall/Precision@K
 src/preprocess.py       преобразование X (fit только на train)
 src/stage4.py           единый запуск этапа 4 и проверки
-tests/                  pytest-проверки этапов 2–4
+src/metrics.py          Recall@K, Precision@K, AP по датам T (общие для baseline и моделей)
+src/stage5.py           единый запуск этапа 5: вход, опыты, фолды, выбор, сохранение
+src/check_model.py      повторная загрузка кандидата без fit
+config/stage5.json      заранее записанные опыты и правило выбора
+models/                 сохранённый Pipeline кандидата
+tests/                  pytest-проверки этапов 2–5
 docs/                   устав и отчёты
 reports/                машинно-читаемые результаты, рисунки и таблицы
 ```

@@ -1,0 +1,14 @@
+{
+  "keys_match": true,
+  "max_abs_score_diff": 0.0,
+  "scores_match": true,
+  "ranks_match": true,
+  "top_k_match": true,
+  "metrics_match": true,
+  "fitted_without_refit": true,
+  "experiment": "exp03_lr_c0.1_balanced",
+  "validation_hits": 19,
+  "validation_n_churn": 63,
+  "validation_recall_at_k": 0.30158730158730157,
+  "ok": true
+}

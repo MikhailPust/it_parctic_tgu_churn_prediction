@@ -1,0 +1,31 @@
+{
+  "feature_version": "stage-4",
+  "seed": 42,
+  "campaign_fraction": 0.1,
+  "baseline_feature": "debt_prev_rub",
+  "primary_metric": "validation macro Recall@K (одна дата validation: macro = pooled)",
+  "selection_rule": [
+    "максимальный validation Recall@K",
+    "при равенстве — максимальный validation Average Precision",
+    "при полном равенстве — более ранний опыт в порядке списка experiments (логистическая регрессия раньше бустинга)"
+  ],
+  "temporal_folds": [
+    {"train": ["2025-12-01", "2026-04-01"], "evaluate": "2026-05-01"},
+    {"train": ["2025-12-01", "2026-05-01"], "evaluate": "2026-06-01"},
+    {"train": ["2025-12-01", "2026-06-01"], "evaluate": "2026-07-01"}
+  ],
+  "experiments": [
+    {"id": "exp01_lr_c0.1", "family": "logistic_regression", "params": {"C": 0.1},
+     "why": "сильная L2-регуляризация: коррелированные признаки долга и оплаты, 440 уходов в train"},
+    {"id": "exp02_lr_c1", "family": "logistic_regression", "params": {"C": 1.0},
+     "why": "слабее регуляризация — проверить, не теряем ли сигнал"},
+    {"id": "exp03_lr_c0.1_balanced", "family": "logistic_regression", "params": {"C": 0.1, "class_weight": "balanced"},
+     "why": "веса классов при доле оттока ~2,8% — отдельный опыт"},
+    {"id": "exp04_hgb_leaf7", "family": "hist_gradient_boosting",
+     "params": {"max_leaf_nodes": 7, "max_iter": 100, "learning_rate": 0.07, "min_samples_leaf": 50, "l2_regularization": 1.0},
+     "why": "неглубокие деревья: взаимодействия долг × стаж при малом числе уходов"},
+    {"id": "exp05_hgb_leaf15", "family": "hist_gradient_boosting",
+     "params": {"max_leaf_nodes": 15, "max_iter": 100, "learning_rate": 0.07, "min_samples_leaf": 50, "l2_regularization": 1.0},
+     "why": "более сложные деревья — проверка переобучения"}
+  ]
+}
