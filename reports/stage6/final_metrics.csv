@@ -1,0 +1,5 @@
+﻿period;approach;snapshot_at;n_active;k;hits;n_churn;recall_at_k;precision_at_k;average_precision
+validation;Baseline (долг);2026-08-01;1929;192;14;63;0.222222;0.072917;0.058262
+validation;Модель exp03;2026-08-01;1929;192;19;63;0.301587;0.098958;0.063307
+test;Baseline (долг);2026-09-01;1916;191;30;65;0.461538;0.157068;0.1166
+test;Модель exp03;2026-09-01;1916;191;26;65;0.4;0.136126;0.133501

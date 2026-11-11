@@ -1,0 +1,13 @@
+{
+  "bundle": "models/stage5_candidate.joblib",
+  "bundle_sha256": "6dbd9914b47e50f7a0a56ef95a1e4460533af77c06f0e8a5d6d507435563e6ee",
+  "experiment": "exp03_lr_c0.1_balanced",
+  "fit_called": false,
+  "test_used_for_selection": false,
+  "same_n_and_k_for_both_approaches": true,
+  "bundle_unchanged_after_scoring": true,
+  "test_overlap_selected": 147,
+  "test_hits_both": 24,
+  "test_hits_only_model": 2,
+  "test_hits_only_baseline": 6
+}

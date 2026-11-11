@@ -1,0 +1,60 @@
+﻿x_column;coefficient;direction
+numeric__voice_known_months_3m;0.41253;выше риск
+numeric__payment_delay_prev_days;0.408565;выше риск
+numeric__billing_months_known_3m;-0.398871;ниже риск
+categorical__tariff_prev_Basic;-0.34103;ниже риск
+numeric__missingindicator_traffic_change_1m_gb;-0.285865;ниже риск
+numeric__traffic_prev_gb;-0.240983;ниже риск
+categorical__tariff_prev_Premium;0.226057;выше риск
+numeric__debt_months_3m;0.225841;выше риск
+categorical__digital_status_prev_export_gap;-0.216859;ниже риск
+numeric__support_billing_3m;-0.212533;ниже риск
+numeric__debt_prev_rub;0.201031;выше риск
+numeric__voice_mean_3m_min;-0.17062;ниже риск
+numeric__missingindicator_debt_change_1m_rub;0.15053;выше риск
+categorical__region_Новосибирская область;-0.143645;ниже риск
+numeric__missingindicator_payment_failure_rate_3m;-0.12576;ниже риск
+categorical__customer_segment_small_business;-0.117151;ниже риск
+numeric__digital_last_observed_age_m;0.116168;выше риск
+categorical__region_Московская область;-0.112748;ниже риск
+numeric__digital_observed_months_3m;0.110807;выше риск
+categorical__acquisition_channel_store;-0.103288;ниже риск
+numeric__payment_attempts_prev;0.099457;выше риск
+numeric__missingindicator_traffic_prev_gb;0.097747;выше риск
+categorical__digital_status_prev_not_published_at_T;0.092528;выше риск
+numeric__unpaid_months_3m;-0.090641;ниже риск
+numeric__support_count_3m;0.084637;выше риск
+numeric__traffic_known_months_3m;-0.084215;ниже риск
+categorical__region_Москва;0.083588;выше риск
+numeric__debt_change_1m_rub;0.082105;выше риск
+numeric__payment_failure_rate_prev;-0.081853;ниже риск
+categorical__region_Красноярский край;0.070102;выше риск
+numeric__support_network_3m;-0.063536;ниже риск
+numeric__missingindicator_traffic_per_active_day_3m_gb;-0.062058;ниже риск
+numeric__missingindicator_traffic_mean_3m_gb;-0.062058;ниже риск
+numeric__missingindicator_app_sessions_prev;-0.06008;ниже риск
+numeric__missingindicator_app_sessions_per_day_prev;-0.06008;ниже риск
+numeric__missingindicator_payment_attempts_prev;-0.06008;ниже риск
+numeric__billing_history_months;0.05762;выше риск
+categorical__acquisition_channel_partner;-0.056377;ниже риск
+numeric__traffic_change_1m_gb;-0.051264;ниже риск
+numeric__app_sessions_mean_3m;-0.050674;ниже риск
+numeric__missingindicator_app_sessions_last_observed;0.050193;выше риск
+numeric__missingindicator_app_sessions_mean_3m;0.050193;выше риск
+numeric__missingindicator_digital_last_observed_age_m;0.050193;выше риск
+categorical__region_Томская область;-0.045908;ниже риск
+numeric__traffic_mean_3m_gb;0.042;выше риск
+numeric__paid_to_charged_3m;-0.040454;ниже риск
+numeric__traffic_per_active_day_3m_gb;0.040285;выше риск
+numeric__app_sessions_per_day_prev;0.039602;выше риск
+categorical__tariff_prev_Comfort;-0.033636;ниже риск
+numeric__payment_failure_rate_3m;0.032776;выше риск
+categorical__customer_segment_individual;-0.031458;ниже риск
+numeric__missingindicator_voice_mean_3m_min;-0.030719;ниже риск
+numeric__app_sessions_last_observed;-0.026822;ниже риск
+categorical__digital_status_prev_observed;-0.023302;ниже риск
+numeric__app_sessions_prev;0.019509;выше риск
+numeric__tenure_days;-0.011955;ниже риск
+categorical__acquisition_channel_online;0.011056;выше риск
+categorical__digital_status_prev_not_enabled;-0.000976;ниже риск
+numeric__missingindicator_payment_failure_rate_prev;-7.9e-05;ниже риск

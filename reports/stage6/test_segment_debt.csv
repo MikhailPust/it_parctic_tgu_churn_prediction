@@ -1,0 +1,5 @@
+﻿approach;group;n;n_selected_in_global_top_k;n_churn;hits;found;recall_at_global_k;precision_in_selected;small_group;few_positive_outcomes
+Модель exp03;долг = 0;1490;0;25;0;0 из 25;0.0;;False;False
+Модель exp03;долг > 0;426;191;40;26;26 из 40;0.65;0.13613;False;False
+Baseline (долг);долг = 0;1490;0;25;0;0 из 25;0.0;;False;False
+Baseline (долг);долг > 0;426;191;40;30;30 из 40;0.75;0.15707;False;False
